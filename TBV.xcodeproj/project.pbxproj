@@ -13,6 +13,7 @@
 		CF0FEFE81F81470F000FC4C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF0FEFE71F81470F000FC4C3 /* Assets.xcassets */; };
 		CF0FEFEB1F81470F000FC4C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF0FEFE91F81470F000FC4C3 /* LaunchScreen.storyboard */; };
 		CF0FEFEE1F81470F000FC4C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0FEFED1F81470F000FC4C3 /* main.m */; };
+		CF0FEFF51F814D3C000FC4C3 /* apple_logo-128.png in Resources */ = {isa = PBXBuildFile; fileRef = CF0FEFF41F814D3C000FC4C3 /* apple_logo-128.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CF0FEFEA1F81470F000FC4C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF0FEFEC1F81470F000FC4C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF0FEFED1F81470F000FC4C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CF0FEFF41F814D3C000FC4C3 /* apple_logo-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple_logo-128.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		CF0FEFDD1F81470F000FC4C3 /* TBV */ = {
 			isa = PBXGroup;
 			children = (
+				CF0FEFF41F814D3C000FC4C3 /* apple_logo-128.png */,
 				CF0FEFDE1F81470F000FC4C3 /* AppDelegate.h */,
 				CF0FEFDF1F81470F000FC4C3 /* AppDelegate.m */,
 				CF0FEFE11F81470F000FC4C3 /* ViewController.h */,
@@ -132,6 +135,7 @@
 				CF0FEFEB1F81470F000FC4C3 /* LaunchScreen.storyboard in Resources */,
 				CF0FEFE81F81470F000FC4C3 /* Assets.xcassets in Resources */,
 				CF0FEFE61F81470F000FC4C3 /* Main.storyboard in Resources */,
+				CF0FEFF51F814D3C000FC4C3 /* apple_logo-128.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +222,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -267,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -279,6 +283,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Z5352K5ZZ;
 				INFOPLIST_FILE = TBV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jiaruh.TBV;
@@ -292,6 +297,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Z5352K5ZZ;
 				INFOPLIST_FILE = TBV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jiaruh.TBV;
