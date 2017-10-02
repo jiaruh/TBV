@@ -9,7 +9,8 @@
 #import "ViewController.h"
 
 @interface ViewController ()<UITableViewDataSource>{
-    NSArray *array;
+    NSArray *arr1;
+    NSArray *arr2;
 }
 
 @end
@@ -19,7 +20,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    array = [[NSArray alloc] initWithObjects:@1,@2,@3,@4,@5,@6,@7,@8,nil];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Notes" ofType:@"json"];
+    NSData *jsondata = [[NSData alloc] initWithContentsOfFile:path];
+    
+    NSError *error;
+    NSDictionary *jsonobj = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingMutableContainers error:&error];
+    if(!jsonobj||error){
+        NSLog(@"解码失败");
+    }else{
+        arr1 =jsonobj[@"Record"];
+    }
+   // arr1 = [[NSArray alloc] initWithObjects:@1,@2,@3,@4,@5,@6,@7,@8,nil];
+  //  arr2 = [[NSArray alloc] initWithObjects:@"a",@"b",@"c",@"d",@"e",@"f",@"g",@"h", nil];
 }
 
 
@@ -36,14 +49,16 @@
     if(cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text = [[array objectAtIndex:indexPath.row]description];
+    cell.textLabel.text = [[arr1 objectAtIndex:indexPath.row] valueForKey:@"Content"];
+    NSLog(@"%@",cell.textLabel.text);
+    //cell.detailTextLabel.text = [arr2 objectAtIndex:indexPath.row];
     UIImage *image = [UIImage imageNamed:@"apple_logo-128"];
     cell.imageView.image = image;
     return  cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [array count];
+    return [arr1 count];
 }
 
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
