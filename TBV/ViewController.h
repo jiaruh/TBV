@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController{
-    NSArray *array;
+    
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
