@@ -21,16 +21,39 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Notes" ofType:@"json"];
-    NSData *jsondata = [[NSData alloc] initWithContentsOfFile:path];
     
+    //String->data->NSJSonSerialization
+    //NSString *path = [[NSBundle mainBundle] pathForResource:@"Notes" ofType:@"json"];
+    //NSData *jsondata = [[NSData alloc] initWithContentsOfFile:path];
+    //NSDictionary *jsonobj = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingMutableContainers error:&error];
+    
+    //String->inputStream->NSJSonSerialization
+    //NSString *path = [[NSBundle mainBundle] pathForResource:@"Notes" ofType:@"json"];
+    //NSInputStream *inputJson = [NSInputStream inputStreamWithFileAtPath:path];
+    //[inputJson open];
+    //NSDictionary *jsonobj = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingMutableContainers error:&error];
+    //***
+    //[inputJson close];
+
+//  url->data->inputStream->NSJSonSerialization
+    NSURL *url = [NSURL URLWithString:@"http://teachers.ren/Notes.json"];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSInputStream *inputJson = [NSInputStream inputStreamWithData:data];
+ 
+
+    //URL->Strram 暂且行不通
+    //NSURL *url = [NSURL URLWithString:@"http://teachers.ren/Notes.json"];
+    //NSInputStream *inputJson = [NSInputStream inputStreamWithURL:url];
+    
+    [inputJson open];
     NSError *error;
-    NSDictionary *jsonobj = [NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingMutableContainers error:&error];
+    NSDictionary *jsonobj = [NSJSONSerialization JSONObjectWithStream:inputJson options:NSJSONReadingMutableContainers error:&error];
     if(!jsonobj||error){
         NSLog(@"解码失败");
     }else{
         arr1 =jsonobj[@"Record"];
     }
+    [inputJson close];
    // arr1 = [[NSArray alloc] initWithObjects:@1,@2,@3,@4,@5,@6,@7,@8,nil];
   //  arr2 = [[NSArray alloc] initWithObjects:@"a",@"b",@"c",@"d",@"e",@"f",@"g",@"h", nil];
 }
